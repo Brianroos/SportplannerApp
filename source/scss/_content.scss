@@ -1,0 +1,168 @@
+.content {
+  margin: -50px 0 50px 0;
+
+  .box {
+    &.players-overview {
+      .box-inside {
+        &:first-child {
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .box-inside {
+      @include border-radius(5px);
+      @include box-shadow(0, 2px, 5px, #E7ECEF);
+      background: $color-white;
+      padding: 20px;
+
+      h3 {
+        border-bottom: 1px solid #E7ECEF;
+        margin: 0 0 20px 0;
+        padding: 0 0 10px 0;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+
+        .event {
+          border-top: 1px solid #E7ECEF;
+          margin: 0 0 20px 0;
+          padding: 24px 0 0 0;
+          &:first-child {
+            border-top: 0;
+            padding: 0;
+          }
+
+          .event-inside {
+            position: relative;
+            &.not {
+              &:before {
+                content: 'Afgelast';
+                @include border-radius(5px);
+                @include block(absolute);
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(#E35354, .75);
+                z-index: 1;
+                color: $color-white;
+                font-family: $font-primary;
+                font-weight: 300;
+                font-size: 26px;
+                line-height: 26px;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 25px 0;
+              }
+            }
+          }
+
+          .title {
+            h4 {
+              display: inline-block;
+            }
+            .weather {
+              color: $color-darkgrey;
+              font-family: $font-primary;
+              font-weight: 400;
+              font-size: 36px;
+              line-height: 36px;
+              float: right;
+
+              span {
+                font-weight: 300;
+              }
+            }
+          }
+          .info {
+            position: relative;
+            padding: 0 150px 0 0;
+
+            p {
+              letter-spacing: 0.5px;
+              margin: 0;
+            }
+            .details {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              text-align: right;
+            }
+          }
+        }
+
+        .player {
+          border-top: 1px solid #E7ECEF;
+          margin: 0 0 20px 0;
+          padding: 24px 0 0 0;
+          &:first-child {
+            border-top: 0;
+            padding: 0;
+          }
+
+          h4 {
+            display: inline-block;
+          }
+          .heartrate {
+            color: $color-darkgrey;
+            font-family: $font-primary;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 28px;
+            float: right;
+
+            img {
+              height: 22px;
+              vertical-align: top;
+              margin: 2px 5px 0 0;
+            }
+          }
+        }
+      }
+
+      .football-pitch {
+        position: relative;
+        padding: 0 0 20px 0;
+
+        ul {
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: 50px 20px 20px;
+          text-align: center;
+
+          li {
+            background: url('../img/football-shirt.png') no-repeat;
+            background-size: 100% 100%;
+            min-width: 90px;
+            min-height: 90px;
+            margin: 0 15px 30px;
+            padding: 10px 0 0 0;
+            color: $color-darkgrey;
+            font-family: $font-primary;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            display: inline-block;
+
+            img {
+              height: 18px;
+              vertical-align: top;
+              margin: 0 auto 10px;
+              display: block;
+            }
+            span {
+              font-weight: 400;
+              font-size: 36px;
+              display: block;
+              margin: 0 0 6px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

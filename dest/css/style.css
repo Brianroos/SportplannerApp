@@ -14,6 +14,7 @@
      * 3. Prevent adjustments of font size after orientation changes in
      *    IE on Windows Phone and in iOS.
      */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6045,6 +6046,238 @@ pre {
       .column-block > :last-child {
         margin-bottom: 0; } }
 
+h1 {
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 60px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  display: inline; }
+
+h3 {
+  color: #23CF5F;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.7px;
+  margin: 0; }
+  h3 span {
+    font-weight: 300; }
+
+h4 {
+  color: #3C3C3C;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0; }
+
+h5 {
+  color: #3C3C3C;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0; }
+
+header {
+  padding: 50px 0 100px 0;
+  background: #23CF5F;
+  background: -webkit-linear-gradient(128deg, #23CF5F, #4BA55B);
+  background: -o-linear-gradient(128deg, #23CF5F, #4BA55B);
+  background: -moz-linear-gradient(128deg, #23CF5F, #4BA55B);
+  background: linear-gradient(128deg, #23CF5F, #4BA55B); }
+  header .logo img {
+    float: left;
+    height: 60px; }
+  header .menu {
+    text-align: right; }
+    header .menu ul {
+      margin: 0;
+      list-style: none;
+      display: inline-block; }
+      header .menu ul li {
+        position: relative;
+        display: inline-block;
+        margin: 0 30px 0 0;
+        padding: 0 30px 0 0; }
+        header .menu ul li:before {
+          content: '|';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0; }
+        header .menu ul li a {
+          border-bottom: 1px solid transparent;
+          padding-bottom: 12px;
+          -webkit-transition: border-color .3s ease, padding-bottom .3s ease;
+          transition: border-color .3s ease, padding-bottom .3s ease; }
+          header .menu ul li a:hover {
+            border-color: #FFF;
+            padding-bottom: 5px; }
+      header .menu ul li, header .menu ul li a {
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 60px;
+        letter-spacing: 0.7px; }
+    header .menu .current-date {
+      display: inline-block; }
+      header .menu .current-date p {
+        color: #FFF;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 60px;
+        letter-spacing: 0.7px;
+        margin: 0;
+        text-align: right; }
+        header .menu .current-date p span {
+          font-weight: 300; }
+
+.content {
+  margin: -50px 0 50px 0; }
+  .content .box.players-overview .box-inside:first-child {
+    margin-bottom: 30px; }
+  .content .box .box-inside {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-box-shadow: 0 2px 5px #E7ECEF;
+    -moz-box-shadow: 0 2px 5px #E7ECEF;
+    box-shadow: 0 2px 5px #E7ECEF;
+    background: #FFF;
+    padding: 20px; }
+    .content .box .box-inside h3 {
+      border-bottom: 1px solid #E7ECEF;
+      margin: 0 0 20px 0;
+      padding: 0 0 10px 0; }
+    .content .box .box-inside ul {
+      list-style: none;
+      margin: 0; }
+      .content .box .box-inside ul .event {
+        border-top: 1px solid #E7ECEF;
+        margin: 0 0 20px 0;
+        padding: 24px 0 0 0; }
+        .content .box .box-inside ul .event:first-child {
+          border-top: 0;
+          padding: 0; }
+        .content .box .box-inside ul .event .event-inside {
+          position: relative; }
+          .content .box .box-inside ul .event .event-inside.not:before {
+            content: 'Afgelast';
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(227, 83, 84, 0.75);
+            z-index: 1;
+            color: #FFF;
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-size: 26px;
+            line-height: 26px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 25px 0; }
+        .content .box .box-inside ul .event .title h4 {
+          display: inline-block; }
+        .content .box .box-inside ul .event .title .weather {
+          color: #3C3C3C;
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          font-size: 36px;
+          line-height: 36px;
+          float: right; }
+          .content .box .box-inside ul .event .title .weather span {
+            font-weight: 300; }
+        .content .box .box-inside ul .event .info {
+          position: relative;
+          padding: 0 150px 0 0; }
+          .content .box .box-inside ul .event .info p {
+            letter-spacing: 0.5px;
+            margin: 0; }
+          .content .box .box-inside ul .event .info .details {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right; }
+      .content .box .box-inside ul .player {
+        border-top: 1px solid #E7ECEF;
+        margin: 0 0 20px 0;
+        padding: 24px 0 0 0; }
+        .content .box .box-inside ul .player:first-child {
+          border-top: 0;
+          padding: 0; }
+        .content .box .box-inside ul .player h4 {
+          display: inline-block; }
+        .content .box .box-inside ul .player .heartrate {
+          color: #3C3C3C;
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          font-size: 36px;
+          line-height: 28px;
+          float: right; }
+          .content .box .box-inside ul .player .heartrate img {
+            height: 22px;
+            vertical-align: top;
+            margin: 2px 5px 0 0; }
+    .content .box .box-inside .football-pitch {
+      position: relative;
+      padding: 0 0 20px 0; }
+      .content .box .box-inside .football-pitch ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 50px 20px 20px;
+        text-align: center; }
+        .content .box .box-inside .football-pitch ul li {
+          background: url("../img/football-shirt.png") no-repeat;
+          background-size: 100% 100%;
+          min-width: 90px;
+          min-height: 90px;
+          margin: 0 15px 30px;
+          padding: 10px 0 0 0;
+          color: #3C3C3C;
+          font-family: "Roboto", sans-serif;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          display: inline-block; }
+          .content .box .box-inside .football-pitch ul li img {
+            height: 18px;
+            vertical-align: top;
+            margin: 0 auto 10px;
+            display: block; }
+          .content .box .box-inside .football-pitch ul li span {
+            font-weight: 400;
+            font-size: 36px;
+            display: block;
+            margin: 0 0 6px 0; }
+
 * {
   -webkit-tap-highlight-color: transparent;
   outline: none; }
@@ -6053,5 +6286,49 @@ html, body {
   height: 100%; }
 
 body {
-  background: #FFF;
-  font-family: "Arial", "Helvetica", sans-serif; }
+  background: #F4F9FC;
+  font-family: "Roboto", sans-serif;
+  color: #3C3C3C; }
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0; }
+
+.button {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0 9px;
+  border: none;
+  cursor: pointer;
+  background: #B5BFCC;
+  color: #FFF;
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  width: auto;
+  min-width: 25px;
+  height: 25px;
+  line-height: 25px;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease; }
+  .button:hover {
+    background: #97A1AF; }
+  .button.present {
+    background: #23CF5F; }
+    .button.present:hover {
+      background: #1BBB53; }
+  .button.absent {
+    background: #E35354; }
+    .button.absent:hover {
+      background: #D04647; }
+  .button span {
+    font-weight: 300; }
