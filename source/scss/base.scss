@@ -3,13 +3,19 @@ $grid-column-count: 24;
 @include foundation-global-styles;
 @include foundation-grid;
 @import 'node_modules/bourbon/app/assets/stylesheets/bourbon';
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
 
-@import 'mixins';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 $font-primary: 'Roboto', sans-serif;
 $color-white: #FFF;
 $color-black: #000;
+$color-primary: #23CF5F;
+$color-darkgreen: #4BA55B;
+$color-grey: #B5BFCC;
+$color-darkgrey: #3C3C3C;
+@import 'mixins';
 @import 'typography';
+@import 'header';
+@import 'content';
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -21,6 +27,53 @@ html, body {
 }
 
 body {
-  background: $color-white;
+  background: #F4F9FC;
   font-family: $font-primary;
+  color: $color-darkgrey;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.button {
+  @include border-radius(5px);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0 9px;
+  border: none;
+  cursor: pointer;
+  background: $color-grey;
+  color: $color-white;
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  width: auto;
+  min-width: 25px;
+  height: 25px;
+  line-height: 25px;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease;
+  &:hover {
+    background: #97A1AF;
+  }
+
+  &.present {
+    background: $color-primary;
+    &:hover {
+      background: #1BBB53;
+    }
+  }
+  &.absent {
+    background: #E35354;
+    &:hover {
+      background: #D04647;
+    }
+  }
+
+  span {
+    font-weight: 300;
+  }
 }

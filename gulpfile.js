@@ -57,7 +57,7 @@ const paths = {
                 directories.src + '/assets/images/**/*.gif',
                 directories.src + '/assets/images/**/*.jpeg'
             ],
-            dest: directories.dest + '/images'
+            dest: directories.dest + '/img'
         },
         svg: {
             src: [
