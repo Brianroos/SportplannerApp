@@ -7,8 +7,13 @@ header {
   background: linear-gradient(128deg, $color-primary, $color-darkgreen);
 
   .logo {
+    &.center {
+      text-align: center;
+    }
+
     img {
-      float: left;
+      float: none;
+      vertical-align: top;
       height: 60px;
     }
   }
@@ -55,7 +60,7 @@ header {
 
     .current-date {
       display: inline-block;
-      
+
       p {
         color: $color-white;
         font-family: $font-primary;

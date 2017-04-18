@@ -6,6 +6,7 @@ function init() {
 }
 init();
 
+// FUNC: Get current date
 function getCurrentDate() {
   var currentDateDiv = $('header .current-date');
   var months = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];

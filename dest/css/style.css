@@ -6093,8 +6093,11 @@ header {
   background: -o-linear-gradient(128deg, #23CF5F, #4BA55B);
   background: -moz-linear-gradient(128deg, #23CF5F, #4BA55B);
   background: linear-gradient(128deg, #23CF5F, #4BA55B); }
+  header .logo.center {
+    text-align: center; }
   header .logo img {
-    float: left;
+    float: none;
+    vertical-align: top;
     height: 60px; }
   header .menu {
     text-align: right; }
@@ -6144,6 +6147,58 @@ header {
 
 .content {
   margin: -50px 0 50px 0; }
+  .content .box.form form input {
+    height: 40px;
+    margin: 0 0 20px 0;
+    padding: 7px;
+    border: 1px solid #B5BFCC;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #FFF;
+    -webkit-box-shadow: inset 0 1px 1px rgba(10, 10, 10, 0.1);
+    -moz-box-shadow: inset 0 1px 1px rgba(10, 10, 10, 0.1);
+    box-shadow: inset 0 1px 1px rgba(10, 10, 10, 0.1);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #3C3C3C;
+    -webkit-transition: border-color .2s ease-in-out,-webkit-box-shadow .4s;
+    transition: border-color .2s ease-in-out, -webkit-box-shadow .4s;
+    transition: box-shadow .4s, border-color .2s ease-in-out;
+    transition: box-shadow .4s, border-color .2s ease-in-out, -webkit-box-shadow .4s; }
+    .content .box.form form input:focus {
+      border: 1px solid #8A8A8A;
+      background-color: #FFF;
+      -webkit-box-shadow: 0 0 4px #CACACA;
+      -moz-box-shadow: 0 0 4px #CACACA;
+      box-shadow: 0 0 4px #CACACA;
+      -webkit-transition: border-color .2s ease-in-out,-webkit-box-shadow .4s;
+      transition: border-color .2s ease-in-out, -webkit-box-shadow .4s;
+      transition: box-shadow .4s, border-color .2s ease-in-out;
+      transition: box-shadow .4s, border-color .2s ease-in-out, -webkit-box-shadow .4s; }
+    .content .box.form form input[type=submit] {
+      display: inline-block;
+      float: right;
+      margin: 0 0 20px 0;
+      padding: 0 18px;
+      border: none;
+      cursor: pointer;
+      background: #23CF5F;
+      color: #FFF;
+      text-align: center;
+      font-size: 13px;
+      text-transform: uppercase;
+      line-height: 40px;
+      -webkit-transition: background .2s ease;
+      transition: background .2s ease; }
+      .content .box.form form input[type=submit]:hover {
+        background: #1BBB53; }
   .content .box.players-overview .box-inside:first-child {
     margin-bottom: 30px; }
   .content .box .box-inside {
@@ -6250,6 +6305,8 @@ header {
       .content .box .box-inside .football-pitch ul {
         position: absolute;
         top: 0;
+        right: 0;
+        bottom: 20px;
         left: 0;
         margin: 50px 20px 20px;
         text-align: center; }
@@ -6289,6 +6346,9 @@ body {
   background: #F4F9FC;
   font-family: "Roboto", sans-serif;
   color: #3C3C3C; }
+
+.clear {
+  clear: both; }
 
 .no-padding {
   padding-left: 0;
