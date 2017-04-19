@@ -2,7 +2,14 @@ function init() {
   // Init Foundation
   $(document).foundation();
 
+  // Init MagnificPopup
+  $('.open-popup-link').magnificPopup({
+    type:'inline',
+    midClick: true
+  });
+
   getCurrentDate();
+  setActivityNonActive();
 }
 init();
 
@@ -17,4 +24,20 @@ function getCurrentDate() {
   var yearValue = currentDate.getFullYear();
 
   currentDateDiv.html('<p><span>Vandaag:</span> '+ dayValue +' '+ months[monthValue] +' '+ yearValue +'</p>');
+}
+
+// FUNC: Set activity non-active
+function setActivityNonActive() {
+  var activities = $('li.event');
+
+  if(activities.length > 0) {
+    $.each(activities, function(key, value) {
+      var inside = $(this).find($('.event-inside'));
+      var weather = $(this).find($('.weather span')).html();
+
+      if(weather < 10) {
+        inside.addClass('not');
+      }
+    });
+  }
 }
