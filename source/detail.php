@@ -1,4 +1,16 @@
-<?php require 'config.php'; ?>
+<?php
+  session_start();
+  require 'config.php';
+
+  if(!isset($_SESSION['loggedIn'])) {
+    header("location: index.php");
+    exit;
+  } else if((isset($_GET['action']) && $_GET['action'] === 'logout')) {
+    session_destroy();
+    header('location: index.php');
+    exit;
+  }
+?>
 <?php
   // Query activity information
   $query = 'SELECT * FROM sportplannerActivities WHERE id = "'. $_GET['id'] .'"';
@@ -52,6 +64,22 @@
     }
   }
 
+  // New activity
+  if(isset($_POST['submitActivity'])) {
+    $name = mysql_real_escape_string($_POST['name']);
+    $weather = mysql_real_escape_string($_POST['weather']);
+    $date = mysql_real_escape_string($_POST['date']);
+    $time = mysql_real_escape_string($_POST['time']);
+    $club = mysql_real_escape_string($_POST['club']);
+    $location = mysql_real_escape_string($_POST['location']);
+
+    $queryAc = mysql_query("SELECT * FROM sportplannerActivities WHERE name = '$name' OR date = '$date' AND time = '$time'");
+    if(mysql_num_rows($queryAc) == 0) {
+      $queryPostAc = mysql_query("INSERT INTO sportplannerActivities (id, name, weather, date, time, club, location) VALUES (null, '$name', '$weather', '$date', '$time', '$club', '$location')");
+      header('location: overview.php');
+    }
+  }
+
   mysql_close($conn);
 ?>
 <!DOCTYPE html>
@@ -67,20 +95,35 @@
 </head>
 <body>
 
+  <div id="form-popup" class="white-popup mfp-hide">
+    <h3>Nieuwe activiteit</h3>
+      <form action="overview.php" method="post">
+        <input type="text" name="name" placeholder="Naam activiteit" required>
+        <input type="number" name="weather" placeholder="Weersverwachting" required>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+        <input type="text" name="club" placeholder="Club" required>
+        <input type="text" name="location" placeholder="Locatie" required>
+        <input type="submit" name="submitActivity" value="Maak nieuwe activiteit aan">
+      </form>
+    <div class="clear"></div>
+  </div>
+
   <div class="page">
     <header>
       <div class="row">
-        <div class="columns logo medium-12">
+        <div class="columns logo medium-10">
           <a href="overview.php">
             <img src="img/logo.png" alt="Sportplanner">
             <h1>Sportplanner</h1>
           </a>
         </div>
-        <div class="columns menu medium-12">
-          <!-- <ul>
-            <li>Hallo, Admin</li>
-            <li><a href="#">Nieuwe activiteit</a></li>
-          </ul> -->
+        <div class="columns menu medium-14">
+          <ul>
+            <li>Hallo, <?php echo $_SESSION['user']['first_name']; ?></li>
+            <?php if($_SESSION['user']['admin'] == 1) { echo '<li><a href="#form-popup" class="open-popup-link">Nieuwe activiteit</a></li>'; } ?>
+            <li><a href="?action=logout">Uitloggen</a></li>
+          </ul>
           <div class="current-date"></div>
         </div>
       </div>
@@ -96,12 +139,12 @@
                 echo '
                   <h5>Activiteit</h5>
                   <p>'. $arrayDetail['name'] .'</p>
-                  <h5>Weerbericht</h5>
-                  <p>17 graden, kans op regenbuien 20%</p>
+                  <h5>Temperatuur</h5>
+                  <p>'. $arrayDetail['weather'] .' graden</p>
                   <h5>Datum en tijd</h5>
                   <p>'. $arrayDetail['date'] ." - ". $arrayDetail['time'] .'</p>
                   <h5>Locatie</h5>
-                  <p>'. $arrayDetail['location'] .'</p>
+                  <p>'. $arrayDetail['club'] .", ". $arrayDetail['location'] .'</p>
                 ';
               ?>
             </div>

@@ -1,4 +1,28 @@
-<?php require 'config.php'; ?>
+<?php
+  session_start();
+  require 'config.php';
+?>
+<?php
+  if(isset($_POST['submit'])) {
+    $email = mysql_real_escape_string($_POST['email']);
+    $pass = mysql_real_escape_string($_POST['password']);
+
+    $query = 'SELECT * FROM sportplannerPlayers WHERE email = "'. $email .'" AND password = "'. $pass .'"';
+    $result = mysql_query($query, $conn);
+
+    if($query) {
+      if($row = mysql_fetch_assoc($result)) {
+        $_SESSION['loggedIn'] = true;
+        $_SESSION['user'] = $row;
+
+        if($_SESSION['loggedIn'] && $_SESSION['loggedIn'] == true) {
+          header('location: overview.php');
+          exit;
+        }
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +52,8 @@
           <div class="box-inside">
             <h3>Inloggen</h3>
             <form action="index.php" method="post">
-							<input type="email" name="email" placeholder="E-mail">
-							<input type="password" name="password" placeholder="Wachtwoord">
+							<input type="email" name="email" placeholder="E-mail" required>
+							<input type="password" name="password" placeholder="Wachtwoord" required>
 							<input type="submit" name="submit" value="Inloggen">
 						</form>
             <div class="clear"></div>

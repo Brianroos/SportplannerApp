@@ -2,56 +2,6 @@
   margin: -50px 0 50px 0;
 
   .box {
-    &.form {
-      form {
-        input {
-          height: 40px;
-          margin: 0 0 20px 0;
-          padding: 7px;
-          border: 1px solid $color-grey;
-          @include border-radius(5px);
-          background: $color-white;
-          @include box-shadow(0, 1px, 1px, rgba(10, 10, 10, .1), true);
-          font-family: $font-primary;
-          font-size: 16px;
-          font-weight: 300;
-          color: $color-darkgrey;
-          -webkit-transition: border-color .2s ease-in-out,-webkit-box-shadow .4s;
-          transition: border-color .2s ease-in-out, -webkit-box-shadow .4s;
-          transition: box-shadow .4s, border-color .2s ease-in-out;
-          transition: box-shadow .4s, border-color .2s ease-in-out, -webkit-box-shadow .4s;
-          &:focus {
-            border: 1px solid #8A8A8A;
-            background-color: $color-white;
-            @include box-shadow(0, 0, 4px, #CACACA);
-            -webkit-transition: border-color .2s ease-in-out,-webkit-box-shadow .4s;
-            transition: border-color .2s ease-in-out, -webkit-box-shadow .4s;
-            transition: box-shadow .4s, border-color .2s ease-in-out;
-            transition: box-shadow .4s, border-color .2s ease-in-out, -webkit-box-shadow .4s;
-          }
-
-          &[type=submit] {
-            display: inline-block;
-            float: right;
-            margin: 0 0 20px 0;
-            padding: 0 18px;
-            border: none;
-            cursor: pointer;
-            background: $color-primary;
-            color: $color-white;
-            text-align: center;
-            font-size: 13px;
-            text-transform: uppercase;
-            line-height: 40px;
-            -webkit-transition: background .2s ease;
-            transition: background .2s ease;
-            &:hover {
-              background: #1BBB53;
-            }
-          }
-        }
-      }
-    }
     &.players-overview {
       .box-inside {
         &:first-child {
@@ -116,13 +66,13 @@
             .weather {
               color: $color-darkgrey;
               font-family: $font-primary;
-              font-weight: 400;
+              font-weight: 300;
               font-size: 36px;
               line-height: 36px;
               float: right;
 
               span {
-                font-weight: 300;
+                font-weight: 400;
               }
             }
           }
