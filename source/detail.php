@@ -112,13 +112,13 @@
   <div class="page">
     <header>
       <div class="row">
-        <div class="columns logo medium-10">
+        <div class="columns logo large-10">
           <a href="overview.php">
             <img src="img/logo.png" alt="Sportplanner">
             <h1>Sportplanner</h1>
           </a>
         </div>
-        <div class="columns menu medium-14">
+        <div class="columns menu large-14">
           <ul>
             <li>Hallo, <?php echo $_SESSION['user']['first_name']; ?></li>
             <?php if($_SESSION['user']['admin'] == 1) { echo '<li><a href="#form-popup" class="open-popup-link">Nieuwe activiteit</a></li>'; } ?>
@@ -131,7 +131,7 @@
 
     <section class="content">
       <div class="row">
-        <div class="columns box detail-info medium-7">
+        <div class="columns box detail-info medium-12 large-6">
           <div class="box-inside">
             <h3>Informatie</h3>
             <div class="description">
@@ -151,7 +151,7 @@
           </div>
         </div>
 
-        <div class="columns box players-overview medium-7">
+        <div class="columns box players-overview medium-12 large-8">
           <div class="box-inside">
             <h3>Aanwezigen <span>(<?php echo count($arrayPresentPlayers); ?>)</span></h3>
             <ul>
@@ -190,11 +190,11 @@
           </div>
         </div>
 
-        <div class="columns box starting-team medium-10">
+        <div class="columns box starting-team large-10">
           <div class="box-inside">
             <h3>Basiselftal <span>(komende wedstrijd)</span></h3>
             <div class="football-pitch">
-              <img src="img/football-pitch.jpg" alt="">
+              <img class="pitch" src="img/football-pitch.jpg" alt="">
               <ul>
                 <?php
                   foreach($arrayPitchPlayers as $player) {

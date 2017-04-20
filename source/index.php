@@ -48,7 +48,7 @@
 
     <section class="content">
       <div class="row">
-        <div class="columns box form medium-12 medium-offset-6">
+        <div class="columns box form medium-16 medium-offset-4 large-12 large-offset-6">
           <div class="box-inside">
             <h3>Inloggen</h3>
             <form action="index.php" method="post">

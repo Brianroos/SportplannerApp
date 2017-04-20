@@ -35,6 +35,7 @@ function setActivityNonActive() {
       var inside = $(this).find($('.event-inside'));
       var weather = $(this).find($('.weather span')).html();
 
+      // If under 10 degrees
       if(weather < 10) {
         inside.addClass('not');
       }

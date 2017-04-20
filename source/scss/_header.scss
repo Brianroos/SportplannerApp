@@ -20,14 +20,21 @@
 }
 
 header {
-  padding: 50px 0 100px 0;
+  padding: 30px 0 80px 0;
   background: $color-primary;
   background: -webkit-linear-gradient(128deg, $color-primary, $color-darkgreen);
   background: -o-linear-gradient(128deg, $color-primary, $color-darkgreen);
   background: -moz-linear-gradient(128deg, $color-primary, $color-darkgreen);
   background: linear-gradient(128deg, $color-primary, $color-darkgreen);
+  @include breakpoint(large) {
+    padding: 50px 0 100px 0;
+  }
 
   .logo {
+    text-align: center;
+    @include breakpoint(large) {
+      text-align: left;
+    }
     &.center {
       text-align: center;
     }
@@ -35,37 +42,57 @@ header {
     img {
       float: none;
       vertical-align: top;
-      height: 60px;
+      height: 40px;
+      @include breakpoint(large) {
+        height: 60px;
+      }
     }
   }
   .menu {
     text-align: right;
 
     ul {
-      margin: 0;
+      margin: 20px 0 0 0;
       list-style: none;
       display: inline-block;
+      width: 100%;
+      @include breakpoint(large) {
+        margin: 0;
+        width: auto;
+      }
 
       li {
         position: relative;
         display: inline-block;
-        margin: 0 10px 0 0;
-        padding: 0 20px 0 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        @include breakpoint(large) {
+          width: auto;
+          margin: 0 10px 0 0;
+          padding: 0 20px 0 0;
+        }
         &:before {
-          content: '|';
-          @include block(absolute);
-          top: 0;
-          right: 0;
+          @include breakpoint(large) {
+            content: '|';
+            @include block(absolute);
+            top: 0;
+            right: 0;
+          }
         }
 
         a {
-          border-bottom: 1px solid transparent;
-          padding-bottom: 12px;
-          -webkit-transition: border-color .3s ease, padding-bottom .3s ease;
-          transition: border-color .3s ease, padding-bottom .3s ease;
-          &:hover {
-            border-color: $color-white;
-            padding-bottom: 5px;
+          border-bottom: 1px solid $color-white;
+          padding-bottom: 5px;
+          @include breakpoint(large) {
+            border-bottom: 1px solid transparent;
+            padding-bottom: 12px;
+            -webkit-transition: border-color .3s ease, padding-bottom .3s ease;
+            transition: border-color .3s ease, padding-bottom .3s ease;
+            &:hover {
+              border-color: $color-white;
+              padding-bottom: 5px;
+            }
           }
         }
       }
@@ -74,23 +101,36 @@ header {
         font-family: $font-primary;
         font-weight: 400;
         font-size: 14px;
-        line-height: 60px;
+        line-height: 30px;
         letter-spacing: 0.7px;
+        text-align: center;
+        @include breakpoint(large) {
+          line-height: 60px;
+          text-align: left;
+        }
       }
     }
 
     .current-date {
       display: inline-block;
+      width: 100%;
+      @include breakpoint(large) {
+        width: auto;
+      }
 
       p {
         color: $color-white;
         font-family: $font-primary;
         font-weight: 400;
         font-size: 14px;
-        line-height: 60px;
+        line-height: 30px;
         letter-spacing: 0.7px;
         margin: 0;
-        text-align: right;
+        text-align: center;
+        @include breakpoint(large) {
+          line-height: 60px;
+          text-align: right;
+        }
 
         span {
           font-weight: 300;

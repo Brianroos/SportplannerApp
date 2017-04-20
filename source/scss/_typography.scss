@@ -2,12 +2,16 @@ h1 {
   color: $color-white;
   font-family: $font-primary;
   font-weight: 100;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 28px;
+  line-height: 40px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
   display: inline;
+  @include breakpoint(large) {
+    font-size: 40px;
+    line-height: 60px;
+  }
 }
 
 h3 {

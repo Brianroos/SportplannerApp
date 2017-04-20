@@ -2,10 +2,27 @@
   margin: -50px 0 50px 0;
 
   .box {
+    @include breakpoint(small only) {
+      margin: 40px 0 0 0;
+      &:first-child {
+        margin: 0;
+      }
+    }
+    @include breakpoint(large) {
+      margin-top: 0;
+    }
+    &.detail-info {
+      @include breakpoint(medium only) {
+        margin-bottom: 40px;
+      }
+    }
     &.players-overview {
+      @include breakpoint(medium only) {
+        margin-bottom: 40px;
+      }
       .box-inside {
         &:first-child {
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
       }
     }
@@ -54,7 +71,10 @@
                 line-height: 26px;
                 text-align: center;
                 text-transform: uppercase;
-                padding: 25px 0;
+                padding: 49px 0;
+                @include breakpoint(large) {
+                  padding: 25px 0;
+                }
               }
             }
           }
@@ -62,6 +82,12 @@
           .title {
             h4 {
               display: inline-block;
+              width: 100%;
+              text-align: center;
+              @include breakpoint(large) {
+                width: auto;
+                text-align: left;
+              }
             }
             .weather {
               color: $color-darkgrey;
@@ -70,6 +96,10 @@
               font-size: 36px;
               line-height: 36px;
               float: right;
+              margin: 6px 0 0 0;
+              @include breakpoint(large) {
+                margin: 0;
+              }
 
               span {
                 font-weight: 400;
@@ -78,17 +108,27 @@
           }
           .info {
             position: relative;
-            padding: 0 150px 0 0;
+            padding: 0 0 0 0;
+            @include breakpoint(large) {
+              padding: 0 150px 0 0;
+            }
 
             p {
               letter-spacing: 0.5px;
               margin: 0;
             }
             .details {
-              position: absolute;
-              right: 0;
-              bottom: 0;
-              text-align: right;
+              width: 100%;
+              text-align: center;
+              margin: 20px 0 0 0;
+              @include breakpoint(large) {
+                width: auto;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                text-align: right;
+                margin: 0;
+              }
             }
           }
         }
@@ -126,41 +166,81 @@
         position: relative;
         padding: 0 0 20px 0;
 
+        .pitch {
+          display: none;
+          @include breakpoint(large) {
+            display: block;
+          }
+        }
+
         ul {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 20px;
-          left: 0;
-          margin: 50px 20px 20px;
-          text-align: center;
+          @include breakpoint(large) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 20px;
+            left: 0;
+            margin: 50px 20px 20px;
+            text-align: center;
+          }
 
           li {
-            background: url('../img/football-shirt.png') no-repeat;
-            background-size: 100% 100%;
-            min-width: 90px;
-            min-height: 90px;
-            margin: 0 15px 30px;
-            padding: 10px 0 0 0;
+            width: 100%;
             color: $color-darkgrey;
             font-family: $font-primary;
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 20px;
-            text-align: center;
+            text-align: left;
             display: inline-block;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            text-transform: uppercase;
+            border-top: 1px solid #E7ECEF;
+            margin: 20px 0 0 0;
+            padding: 24px 0 0 0;
+            &:first-child {
+              border-top: 0;
+              margin: 0;
+              padding: 0;
+            }
+            @include breakpoint(large) {
+              background: url('../img/football-shirt.png') no-repeat;
+              background-size: 100% 100%;
+              width: auto;
+              min-width: 90px;
+              min-height: 90px;
+              margin: 0 5px 30px !important;
+              padding: 10px 0 0 0 !important;
+              font-weight: 300;
+              font-size: 15px;
+              line-height: 20px;
+              text-align: center;
+              border-top: none !important;
+            }
+            @include breakpoint(1200px) {
+              margin: 0 15px 30px !important;
+            }
 
             img {
-              height: 18px;
+              height: 22px;
               vertical-align: top;
-              margin: 0 auto 10px;
-              display: block;
+              margin: 2px 5px 0 0;
+              display: inline-block;
+              position: relative;
+              @include breakpoint(large) {
+                margin: 0 auto 10px;
+                display: block;
+              }
             }
             span {
+              display: inline-block;
+              margin: 0 25px 0 0;
               font-weight: 400;
               font-size: 36px;
-              display: block;
-              margin: 0 0 6px 0;
+              line-height: 28px;
+              @include breakpoint(large) {
+                display: block;
+                margin: 0 0 6px 0;
+              }
             }
           }
         }
